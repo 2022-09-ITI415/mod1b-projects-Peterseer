@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ApplePicker : MonoBehaviour
 {
-
+    [Header("Set in Inspector")]
     public GameObject basketPrefab;
     public int numBaskets = 3;
     public float basketBottomY = -14f;
@@ -32,17 +32,18 @@ public class ApplePicker : MonoBehaviour
         foreach(GameObject tGO in tAppleArray)
         {
             Destroy(tGO);
-
-            int basketIndex = basketList.Count - 1;
-            GameObject tBasketGO = basketList[basketIndex];
-            basketList.RemoveAt(basketIndex);
-            Destroy(tBasketGO);
-
-            if(basketList.Count == 0)
-            {
-                SceneManager.LoadScene("Applepicker");
-            }
         }
+
+        int basketIndex = basketList.Count - 1;
+        GameObject tBasketGO = basketList[basketIndex];
+        basketList.RemoveAt(basketIndex);
+        Destroy(tBasketGO);
+
+        if(basketList.Count == 0)
+        {
+            SceneManager.LoadScene("Applepicker");
+        }
+        
     }
 
     // Update is called once per frame
