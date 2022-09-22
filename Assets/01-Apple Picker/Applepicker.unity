@@ -139,7 +139,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &329172580
 RectTransform:
@@ -533,6 +533,7 @@ GameObject:
   - component: {fileID: 1320297941}
   - component: {fileID: 1320297940}
   - component: {fileID: 1320297939}
+  - component: {fileID: 1320297942}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -606,6 +607,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1320297942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320297938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c283ff74a0938a24a917456b73af3be2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basketPrefab: {fileID: 1313690930269311216, guid: 59f92fc5799a1454aba33f05ee6bca06, type: 3}
+  numBaskets: 3
+  basketBottomY: -14
+  basketSpacingY: 2
+  basketList: []
 --- !u!1 &1723710618
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,6 +635,7 @@ GameObject:
   - component: {fileID: 1723710619}
   - component: {fileID: 1723710621}
   - component: {fileID: 1723710620}
+  - component: {fileID: 1723710622}
   m_Layer: 5
   m_Name: HighScore
   m_TagString: Untagged
@@ -741,6 +760,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723710618}
   m_CullTransparentMesh: 1
+--- !u!114 &1723710622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723710618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927e445c36591c34d8563614f747a410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &711335099299954076
 PrefabInstance:
   m_ObjectHideFlags: 0
