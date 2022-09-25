@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FollowCam : MonoBehaviour
 {
+    public float easing = 0.05f;
+    public Vector2 minXY = Vector2.zero;
     static public GameObject POI;
     public float camZ;
 
@@ -16,9 +18,13 @@ public class FollowCam : MonoBehaviour
     {
         if (POI == null) return;
         Vector3 destination = POI.transform.position;
+        destination.x = Mathf.Max(minXY.x, destination.x);
+        destination.y = Mathf.Max(minXY.y, destination.y);
+        destination = Vector3.Lerp(transform.position, destination, easing);
         destination.z = camZ;
-        destination.y = 0;
+        //destination.y = 0;
         transform.position = destination;
+        Camera.main.orthographicSize = destination.y + 10;
     }
     // Start is called before the first frame update
     void Start()
