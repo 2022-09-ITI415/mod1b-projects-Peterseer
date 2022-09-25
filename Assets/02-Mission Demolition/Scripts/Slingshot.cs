@@ -9,7 +9,7 @@ public class Slingshot : MonoBehaviour
     public GameObject launchPoint;
     public Vector3 launchPos;
     public GameObject projectile;
-    public float velocityMult = 8f;
+    public float velocityMult = 9f;
     public bool aimingMode;
     private Rigidbody projectileRigidbody;
 

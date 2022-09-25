@@ -122,7 +122,7 @@ public class MissionDemolition : MonoBehaviour
             // Zoom out
             SwitchView("Show Both");
             // Start the next level in 2 seconds
-            Invoke("NexsLevel", 2f);
+            Invoke("NextLevel", 2f);
         }
     }
 }

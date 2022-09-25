@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 1856993464731202578}
   - component: {fileID: 4149111388187719934}
   - component: {fileID: 2985665425445876025}
+  - component: {fileID: 7075458106344438219}
+  - component: {fileID: 3714151538706970086}
   m_Layer: 0
   m_Name: Slab
   m_TagString: Untagged
@@ -127,3 +129,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 494e2acd07bd54e60a895e9e8fbed94f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7075458106344438219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2473998454602796842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69bb4a47413399847b3e8c88fe85385c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 4
+--- !u!64 &3714151538706970086
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2473998454602796842}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
