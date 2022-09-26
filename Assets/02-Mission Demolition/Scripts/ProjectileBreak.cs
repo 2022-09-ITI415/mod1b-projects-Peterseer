@@ -5,13 +5,17 @@ using UnityEngine;
 public class ProjectileBreak : MonoBehaviour
 {
 
-    private static bool bol;
+    public bool bol;
     private static bool isHit;
 
+    private void Awake()
+    {
+        print("这个球的目前状态是: " + bol);
+    }
     // Start is called before the first frame update
     void Start()
     {
-        bol = this.GetComponent<Slingshot>().untouched;
+
     }
 
     // Update is called once per frame
