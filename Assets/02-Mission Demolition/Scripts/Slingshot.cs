@@ -12,6 +12,7 @@ public class Slingshot : MonoBehaviour
     public float velocityMult = 9f;
     public bool aimingMode;
     private Rigidbody projectileRigidbody;
+    public bool untouched = true;
 
     static public Vector3 LAUNCH_POS
     {
@@ -42,6 +43,7 @@ public class Slingshot : MonoBehaviour
     private void OnMouseDown()
     {
         aimingMode = true;
+        untouched = true;
         projectile = Instantiate(prefabProjectile) as GameObject;
         projectile.transform.position = launchPos;
         projectile.GetComponent<Rigidbody>().isKinematic = true;
@@ -73,6 +75,7 @@ public class Slingshot : MonoBehaviour
         if(Input.GetMouseButtonUp(0))
         {
             aimingMode = false;
+            untouched = false;
             projectileRigidbody.isKinematic = false;
             projectileRigidbody.velocity = -mouseDelta * velocityMult;
             FollowCam.POI = projectile;
