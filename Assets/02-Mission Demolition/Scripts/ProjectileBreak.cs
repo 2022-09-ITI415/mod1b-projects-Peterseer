@@ -5,7 +5,7 @@ using UnityEngine;
 public class ProjectileBreak : MonoBehaviour
 {
 
-    public bool bol;
+    public bool bol = true;
     private static bool isHit;
 
     private void Awake()
