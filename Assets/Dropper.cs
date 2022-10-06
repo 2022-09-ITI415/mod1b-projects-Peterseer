@@ -9,18 +9,31 @@ public class Dropper : MonoBehaviour
     public float leftAndRightEdge = 10f;
     public float chanceToChangeDirections = 0.1f;
     public float secondsBetweenAppleDrops = 1f;
+    private Vector3 scaleChange, positionChange;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Invoke("DropBlock", 3f);
     }
 
-    void DropApple()
+    void DropBlock()
     {
-        GameObject apple = Instantiate<GameObject>(applePrefab);
-        apple.transform.position = transform.position;
-        Invoke("DropApple", secondsBetweenAppleDrops);
+        GameObject block = Instantiate<GameObject>(blockPrefab);
+        block.transform.position = transform.position;
+        Invoke("DropBlock", secondsBetweenAppleDrops);
+    }
+
+    void blockgenerator()
+    {
+        int r = Random.Range(1, 3);
+        bool isHero = false;//(Random.Range(0, 2) == 1);
+        if(r==1)
+        {
+            scaleChange = new Vector3(1f, 1f, 0f);
+            this.transform.localScale.x += scaleChange;
+
+        }
     }
 
     // Update is called once per frame
