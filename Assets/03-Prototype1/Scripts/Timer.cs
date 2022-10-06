@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour
     public float timeRemaining = 10;
     public TMP_Text Endscore;
     TMP_Text gt;
+    public GameObject winText; 
 
     private void Awake()
     {
@@ -18,7 +19,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         Endscore = GameObject.Find("EndScore").GetComponent<TMP_Text>();
-        GameObject.Find("EndScore").SetActive(false);
+        winText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -34,7 +35,8 @@ public class Timer : MonoBehaviour
         {
             gt.text = "0";
             Debug.Log("Time has run out!");
-            GameObject.Find("EndScore").SetActive(true);
+            winText.SetActive(true);
+            Destroy(GameObject.FindWithTag("Dropper"));
             return;
         }
     }

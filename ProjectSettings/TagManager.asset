@@ -7,6 +7,7 @@ TagManager:
   - Apple
   - Projectile
   - Block
+  - Dropper
   layers:
   - Default
   - TransparentFX
