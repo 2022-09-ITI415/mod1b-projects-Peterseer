@@ -5,7 +5,7 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    public float timeRemaining = 10;
+    public float timeRemaining = 60;
     public TMP_Text Endscore;
     TMP_Text gt;
     public GameObject winText; 
@@ -13,7 +13,7 @@ public class Timer : MonoBehaviour
     private void Awake()
     {
         gt = this.GetComponent<TMP_Text>();
-        timeRemaining = 10;
+        timeRemaining = 60;
     }
     // Start is called before the first frame update
     void Start()
