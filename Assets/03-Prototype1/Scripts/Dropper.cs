@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Dropper : MonoBehaviour
 {
-    public GameObject blockPrefab;
+    public GameObject smallblock;
+    public GameObject largeblock;
+    public GameObject midblock;
     public float speed = 1f;
     public float leftAndRightEdge = 10f;
     public float chanceToChangeDirections = 0.1f;
@@ -19,8 +21,20 @@ public class Dropper : MonoBehaviour
 
     void DropBlock()
     {
-
-        GameObject block = Instantiate<GameObject>(blockPrefab);
+        int r = Random.Range(1, 100);
+        GameObject block = null;
+        if(r>=1 && r<60)
+        {
+            block = Instantiate<GameObject>(largeblock);
+        }
+        else if(r >= 60 && r < 90)
+        {
+            block = Instantiate<GameObject>(midblock);
+        }
+        else
+        {
+            block = Instantiate<GameObject>(smallblock);
+        }
         block.transform.position = transform.position;
         Invoke("DropBlock", secondsBetweenAppleDrops);
     }

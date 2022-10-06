@@ -47,6 +47,7 @@ public class Slingshot2 : MonoBehaviour
         projectile.GetComponent<Rigidbody>().isKinematic = true;
         projectileRigidbody = projectile.GetComponent<Rigidbody>();
         projectileRigidbody.isKinematic = true;
+        projectile.gameObject.tag = "Untagged";
         projectile.GetComponent<OrbBreak>().bol = true;
     }
     // Start is called before the first frame update
@@ -75,9 +76,9 @@ public class Slingshot2 : MonoBehaviour
         {
             aimingMode = false;
             projectile.GetComponent<OrbBreak>().bol = false;
+            projectile.gameObject.tag = "Projectile";
             projectileRigidbody.isKinematic = false;
             projectileRigidbody.velocity = -mouseDelta * velocityMult;
-            FollowCam.POI = projectile;
             projectile = null;
             //MissionDemolition.ShotFired();
         }

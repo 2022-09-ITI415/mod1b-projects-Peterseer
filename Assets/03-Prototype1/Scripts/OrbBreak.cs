@@ -7,6 +7,7 @@ public class OrbBreak : MonoBehaviour
 
     public bool bol = true;
     private static bool isHit;
+    public static float bottomY = -20f;
 
     private void Awake()
     {
@@ -21,7 +22,7 @@ public class OrbBreak : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (this.GetComponent<Rigidbody>().IsSleeping() && bol == false)
+        if ((this.GetComponent<Rigidbody>().IsSleeping() || this.transform.position.y < bottomY) && bol == false)
         {
             print("Ã»ÁË£¡");
             Destroy(this.gameObject);

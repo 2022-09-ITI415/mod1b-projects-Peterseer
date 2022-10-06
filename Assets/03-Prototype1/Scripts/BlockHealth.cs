@@ -1,26 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BlockHealth : MonoBehaviour
 {
-    public int health;
+    public int health =1;
+    public int point;
+    public TMP_Text scoreGT;
     public static float bottomY = -20f;
 
     void OnTriggerEnter(Collider other)
     {
-        // when the trigger is hit by something
-        // check to see if it's a Projectile 
-        if (other.gameObject.tag == "Projectile")
+        if (other.gameObject.CompareTag("Projectile"))
         {
             // if so, set goalMet = true
-            this.health--;
+            //Destroy(other.gameObject);
+            health--;
         }
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+        scoreGT = GameObject.Find("ShootScore").GetComponent<TMP_Text>();
+        //scoreGT.text = "0";
     }
 
     // Update is called once per frame
@@ -28,6 +31,9 @@ public class BlockHealth : MonoBehaviour
     {
         if(this.health<=0)
         {
+            int score = int.Parse(scoreGT.text);
+            score += point;
+            scoreGT.text = score.ToString();
             Destroy(this.gameObject);
         }
 
